@@ -1,0 +1,45 @@
+import unittest
+
+# Helper function mimicking your game outcome logic
+def determine_winner(computer_choice, your_choice):
+    if computer_choice == your_choice:
+        return "draw"
+    else:
+        if computer_choice == 1 and your_choice == 0:
+            return "computer"
+        elif computer_choice == 1 and your_choice == -1:
+            return "you"
+        elif computer_choice == 0 and your_choice == 1:
+            return "you"
+        elif computer_choice == 0 and your_choice == -1:
+            return "computer"
+        elif computer_choice == -1 and your_choice == 0:
+            return "computer"
+        elif computer_choice == -1 and your_choice == 1:
+            return "you"
+        else:
+            return "error"
+
+class TestGameLogic(unittest.TestCase):
+
+    def test_draw(self):
+        self.assertEqual(determine_winner(0, 0), "draw")
+        self.assertEqual(determine_winner(1, 1), "draw")
+        self.assertEqual(determine_winner(-1, -1), "draw")
+
+    def test_computer_wins(self):
+        self.assertEqual(determine_winner(1, 0), "computer")
+        self.assertEqual(determine_winner(0, -1), "computer")
+        self.assertEqual(determine_winner(-1, 0), "computer")
+
+    def test_user_wins(self):
+        self.assertEqual(determine_winner(1, -1), "you")
+        self.assertEqual(determine_winner(0, 1), "you")
+        self.assertEqual(determine_winner(-1, 1), "you")
+
+    def test_error(self):
+        self.assertEqual(determine_winner(99, 0), "error")  # Invalid computer choice
+        self.assertEqual(determine_winner(0, 99), "error")  # Invalid user choice
+
+if __name__ == "__main__":
+    unittest.main()

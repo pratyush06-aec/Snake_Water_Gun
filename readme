@@ -1,0 +1,101 @@
+"" Snake, Gun, Water - Terminal Game Project ""
+
+    1. Overview: 
+
+    This is a terminal-based implementation of the classic "Snake, Water, Gun" game in Python. The player and computer each choose one out of Snake, Water, or Gun, and the winner is determined according to simple predefined rule.
+
+
+
+    2 How to Run the Game (Command Line Instructions): 
+
+    1. Make sure Python is installed (any version >= 3.x).
+    2. Save the script as main.py in your project directory.
+    3. Open your terminal (Command Prompt or PowerShell for Windows; Terminal for Mac/Linux).
+    4. Navigate to the directory containing main.py.
+    5. Run the game with:
+        -> (python main.py)
+
+
+
+    3. Input Format and Valid Options:
+
+    ** When prompted, type exactly one of-
+    a. "Snake"
+    b. "Gun"
+    c. "Water"
+
+    ** Example prompt-
+
+    "text"-
+     -> (Enter your choice: Snake)
+     
+      -> The computer will choose its option randomly.
+
+
+
+    3. Game Rules and Logic Flow:
+
+    ** Rules-
+       -> Snake vs Water: Snake drinks water. Snake wins.
+       -> Water vs Gun: Gun sinks in water. Water wins.
+       -> Gun vs Snake: Gun kills the snake. Gun wins.
+       -> If both players choose the same, it's a draw.
+
+    ** Logic Flow-
+       -> Map choices to numbers: Snake → 0, Gun → 1, Water → -1.
+       -> The player enters their choice.
+       -> The computer randomly selects its choice.
+       -> Both choices are revealed.
+       -> The outcome is determined with conditional logic based on the above rules.
+       -> The result is displayed (Win, Lose, Draw).
+
+
+
+    4. Sample runs:
+
+    ** Example 1
+       -> Enter your choice: Gun
+          You choose Gun
+          Computer choose Snake
+          You win!!!
+
+    ** Example 2
+       -> Enter your choice: Water
+          You choose Water
+          Computer choose Water
+          It's a draw!!!
+
+    ** Example 3
+       -> Enter your choice: Snake
+          You choose Snake
+          Computer choose Gun
+          Computer win!!!!
+
+
+    5. Error Handling:
+
+    If the user inputs a choice not in "Snake", "Gun", or "Water", the game prints an error message regarding a key error and ends gracefully.
+
+
+
+    6. Dependencies:
+
+    -> Only Python’s built-in random module is used.
+    -> No third-party packages required.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
