@@ -1,6 +1,6 @@
 import unittest
 
-# Helper function mimicking your game outcome logic
+# Helper function mimicking your updated game logic
 def determine_winner(computer_choice, your_choice):
     if computer_choice == your_choice:
         return "draw"
@@ -14,9 +14,9 @@ def determine_winner(computer_choice, your_choice):
         elif computer_choice == 0 and your_choice == -1:
             return "computer"
         elif computer_choice == -1 and your_choice == 0:
-            return "computer"
+            return "you"   # <-- fixed to match main code logic
         elif computer_choice == -1 and your_choice == 1:
-            return "you"
+            return "computer"
         else:
             return "error"
 
@@ -30,12 +30,12 @@ class TestGameLogic(unittest.TestCase):
     def test_computer_wins(self):
         self.assertEqual(determine_winner(1, 0), "computer")
         self.assertEqual(determine_winner(0, -1), "computer")
-        self.assertEqual(determine_winner(-1, 0), "computer")
+        self.assertEqual(determine_winner(-1, 1), "computer")
 
     def test_user_wins(self):
         self.assertEqual(determine_winner(1, -1), "you")
         self.assertEqual(determine_winner(0, 1), "you")
-        self.assertEqual(determine_winner(-1, 1), "you")
+        self.assertEqual(determine_winner(-1, 0), "you")   
 
     def test_error(self):
         self.assertEqual(determine_winner(99, 0), "error")  # Invalid computer choice
@@ -43,3 +43,4 @@ class TestGameLogic(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
