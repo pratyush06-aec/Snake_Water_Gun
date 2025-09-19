@@ -1,6 +1,5 @@
 import unittest
 
-# Helper function mimicking your updated game logic
 def determine_winner(computer_choice, your_choice):
     if computer_choice == your_choice:
         return "draw"
@@ -14,7 +13,7 @@ def determine_winner(computer_choice, your_choice):
         elif computer_choice == 0 and your_choice == -1:
             return "computer"
         elif computer_choice == -1 and your_choice == 0:
-            return "you"   # <-- fixed to match main code logic
+            return "you"   
         elif computer_choice == -1 and your_choice == 1:
             return "computer"
         else:
