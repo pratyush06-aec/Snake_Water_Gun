@@ -57,7 +57,7 @@
        -> Enter your choice: Gun
           You choose Gun
           Computer choose Snake
-          You win!!!
+          You won!!!
 
     ** Example 2
        -> Enter your choice: Water
@@ -69,7 +69,7 @@
        -> Enter your choice: Snake
           You choose Snake
           Computer choose Gun
-          Computer win!!!!
+          Computer won!!!!
 
 
     5. Error Handling:
